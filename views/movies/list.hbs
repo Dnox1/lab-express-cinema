@@ -1,0 +1,15 @@
+<div>
+  <form class="form-inline">
+  <label class="sr-only" for="inlineFormInputName2">Search</label>
+  <input type="text" class="form-control mb-2 mr-sm-2" name="search" id="inlineFormInputName2" placeholder="Search">
+  <button type="submit" class="btn btn-primary mb-2">Submit</button>
+</form>
+  {{#each movies as |movie|}}
+  <div>
+    <img src="{{movie.image}}">
+    <h1>{{movie.title}}</h1>
+  </div>
+  <a href="/movies/{{movie.id}}">See more</a>
+  {{/each}}
+
+</div>

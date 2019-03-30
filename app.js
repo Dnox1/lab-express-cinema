@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
 // TODO: require database config
+require("./conf/db.conf");
 
 const moviesRouter = require('./routes/movies.routes');
 
@@ -21,7 +22,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // TODO: setup movies router
-
+app.use('/movies', moviesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
